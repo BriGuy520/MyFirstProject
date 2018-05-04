@@ -1,0 +1,12 @@
+body {
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Black-Hole-Background-Free.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#landing-header {
+  z-index: 10;
+  position: relative;
+  text-align: center;
+  padding-top: 50vh;
+}

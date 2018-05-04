@@ -21,12 +21,9 @@ router.post("/",  function(req, res){
   var title = req.body.title;
   var image = req.body.image;
   var mainContent = req.body.mainContent;
-  var author = {
-    id: req.user._id,
-    username: req.user.username
-  }
 
-  var newBlog = {title: title, image: image, mainContent: mainContent, author: author}
+
+  var newBlog = {title: title, image: image, mainContent: mainContent}
   Blog.create(newBlog, function(err, newlyCreated){
     if(err){
       console.log(err);
@@ -37,7 +34,7 @@ router.post("/",  function(req, res){
   });
 });
 
-// show form to create new campground
+// show form to create new blog
 router.get("/new", function(req, res){
   res.render("blogs/new");
 });
@@ -49,6 +46,26 @@ router.get("/:id", function(req, res){
     } else {
       // render show template with that blog
       res.render("blogs/show", {blog: foundBlog});
+    }
+  });
+});
+
+
+// EDIT Blog Post
+router.get("/:id/edit", function(req, res){
+  Blog.findById(req.params.id, function(err, editBlog){
+    res.render("blogs/edit", {blog: editBlog});
+  });
+});
+
+// UPDATE Blog Route
+router.put("/:id", function(req, res){
+  // find the correct blog and update it
+  Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
+    if(err){
+      res.redirect("/blogs");
+    } else {
+      res.redirect("/blogs/" + req.params.id);
     }
   });
 });

@@ -14,6 +14,7 @@ var blogRoutes = require("./routes/blogs"),
 mongoose.connect("mongodb://localhost/personal_site");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(expressSanitizer());
 
