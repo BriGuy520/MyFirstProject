@@ -2,9 +2,9 @@
 <div class="container">
   <div class="col-md-9">
     <div class="thumbnail">
-      <h4><%=  blog.title %></h4>
+      <h2><%=  blog.title %></h2>
       <img class="img-responsive" src="<%= blog.image %>">
-      <p><%= blog.mainContent%></p>
+      <p><%= blog.mainContent %></p>
       <a href="/blogs/<%= blog._id %>/edit" class="btn btn-warning">Edit</a>
       <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
           <button class="btn btn-danger">Delete</button>

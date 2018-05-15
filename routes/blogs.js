@@ -16,7 +16,6 @@ router.get("/", function(req, res){
 
 // CREATE - add new blog to DB
 router.post("/",  function(req, res){
-  console.log("you are hitting the post route");
   // get data from the form and add to blogs array
   var title = req.body.title;
   var image = req.body.image;
