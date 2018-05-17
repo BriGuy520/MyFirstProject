@@ -1,8 +1,7 @@
 <% include ../partials/header %>
 <div class="container">
-  <div class="col-md-9">
+    <h2><%=  blog.title %></h2>
     <div class="thumbnail">
-      <h2><%=  blog.title %></h2>
       <img class="img-responsive" src="<%= blog.image %>">
       <p><%= blog.mainContent %></p>
       <a href="/blogs/<%= blog._id %>/edit" class="btn btn-warning">Edit</a>
@@ -10,6 +9,5 @@
           <button class="btn btn-danger">Delete</button>
       </form>
     </div>
-  </div>
 </div>
 <% include ../partials/footer %>
