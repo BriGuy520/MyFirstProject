@@ -9,8 +9,7 @@ var express          = require("express"),
 // requiring the routes 
 var blogRoutes = require("./routes/blogs"),
     commentRoutes = require("./routes/comments"),
-    indexRoutes = require("./routes/index"),
-    homeRoute = require("./routes/home");
+    indexRoutes = require("./routes/index");
 
 mongoose.connect("mongodb://localhost/personal_site");
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,7 +19,6 @@ app.use(methodOverride("_method"));
 app.use(expressSanitizer());
 
 app.use(indexRoutes);
-app.use(homeRoute);
 app.use("/blogs", blogRoutes);
 
 app.listen(3000, function(){

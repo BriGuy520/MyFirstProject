@@ -1,7 +1,4 @@
-.container {
-  height: 100vh;
-  padding: 20px;
-}
+
 
 /* Blog Index */
 
@@ -9,6 +6,12 @@
   background: url(https://static.planetminecraft.com/files/resource_media/screenshot/1708/pen-on-paper10869108_lrg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+section {
+  border-bottom: 2px solid lightblue;
+  padding: 10px;
+
 }
 
 /* footer */
@@ -19,6 +22,7 @@ footer {
   align-items: center;
   bottom:0;
   width:100%;
+  padding: 20px;
 	background-color: #391339;
 	color: white;
 }
